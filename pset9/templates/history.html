@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    quote
+{% endblock %}
+
+{% block main %}
+<table class="styled-table">
+	<thead>
+	<tr>
+	    {% for header in headings %}
+		<th>{{header}}</th>
+		{% endfor %}
+	</tr>
+	</thead>
+	<tbody>
+	    {% for row in data %}
+	    <tr>
+            <td>{{row["share"]}}</td>
+            <td>{{row["amount"]}}</td>
+            <td>{{row["price"]}}</td>
+            <td>{{row["time"]}}</td>
+        </tr>
+	    {% endfor %}
+	</tbody>
+</table>
+{% endblock %}

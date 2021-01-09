@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <div class="form-group">
+            <select name="symbol">
+                {% for row in data %}
+                <option value={{row["share"]}}>{{row["share"]}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input required class="form-control" name="shares" placeholder="0" type="number">
+        </div>
+        <button required class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}
